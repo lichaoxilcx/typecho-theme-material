@@ -170,11 +170,12 @@
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=F Y')
+                    <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=Y年m月')
                 ->parse('
                 <li>
                     <a href="{permalink}" tabindex="-1">
                         {date}
+						<span class="sidebar-badge">{count}</span>
                     </a>
                 </li>
                 '); ?>
@@ -187,6 +188,7 @@
                     <i class="material-icons sidebar-material-icons">apps</i>
                     <?php if ($this->options->langis == '0'): ?> Categories
                     <?php elseif ($this->options->langis == '1'): ?> 分类
+                    <?php elseif ($this->options->langis == '2'): ?> 分类
                     <?php endif; ?>
                     <b class="caret"></b>
                 </a>
@@ -196,6 +198,7 @@
                     <li>
                         <a href="<?php $category->permalink(); ?>" title="<?php $category->name(); ?>">
                             <?php $category->name(); ?>
+							<span class="sidebar-badge"><?php echo $category->count();?></span>
                         </a>
                     </li>
                     <?php endwhile; ?>
@@ -204,15 +207,6 @@
             
             <!-- divider -->
             <li class="divider"></li>
-            <!-- Pages  -->
-            <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-                <?php while ($pages->next()): ?>
-                <li>
-                    <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" tabindex="-1">
-                        <?php $pages->title(); ?>
-                    </a>
-                </li>
-            <?php endwhile; ?>
 
             <?php if (!defined('__TYPECHO_ROOT_DIR__')) {
                     exit;
@@ -230,12 +224,23 @@
                     <span class="sidebar-badge"><?php echo $stat->publishedPostsNum;?></span>
                 </a>
             </li>
+			
+            <!-- Pages  -->
+            <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+                <?php while ($pages->next()): ?>
+                <li>
+                    <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" tabindex="-1">
+                        <?php $pages->title(); ?>
+                    </a>
+                </li>
+            <?php endwhile; ?>
         </ul>        
         
         <!-- Sidebar divider -->
         <div class="sidebar-divider"></div>
 
         <!-- Sidebar bottom text -->
+		<!-- 暂不显示
         <a href="https://github.com/viosey/typecho-theme-material" target="_blank" class="sidebar-footer-text-a">
             <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div">
                 <?php if ($this->options->langis == '0'): ?> Theme - Material
@@ -244,6 +249,7 @@
                 <span class="sidebar-badge badge-circle">i</span>
             </div>
         </a>
+		-->
 
         <?php if (!empty($this->options->switch) && in_array('ShowUpyun', $this->options->switch)) : ?>
         <div id="upyun-logo">

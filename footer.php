@@ -153,8 +153,8 @@
             <!--mdl-mini-footer-right-section-->
             <div class="mdl-mini-footer--right-section">
                 <div>
-                    <div class="footer-develop-div">Powered by <a href="http://typecho.org" target="_blank" class="footer-develop-a">Typecho</a></div>
-                    <div class="footer-develop-div">Theme by <a href="https://viosey.com" target="_blank" class="footer-develop-a">Viosey</a></div>
+                    <div class="footer-develop-div">系统由 <a href="http://typecho.org" target="_blank" class="footer-develop-a">Typecho</a> 驱动</div>
+                    <div class="footer-develop-div">主题由 <a href="https://viosey.com" target="_blank" class="footer-develop-a">Viosey</a> 支持</div>
                 </div>
             </div>
         </footer>
@@ -286,7 +286,7 @@
   <?php endif; ?>
   <script> pangu.spacingPage(); </script>
 <?php endif; ?>
-<?php $html_source = ob_get_contents(); ob_clean(); print compressHtml($html_source); ob_end_flush(); ?>
+
 <?php $this->footer(); ?>
 
 </html>

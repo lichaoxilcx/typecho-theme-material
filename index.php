@@ -46,6 +46,7 @@ $this->need('header.php');?>
                                 </div>
                                 <div>
                                     <span class="author-name-span"><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span>
+                                    <span class="index-top-block-date"></span>
                                 </div>
                             </div>
                         </div>
@@ -269,12 +270,12 @@ $this->need('header.php');?>
                             <i class="material-icons" role="presentation">arrow_back</i>
                         </button>'); ?>
                                 <div class="section-spacer"></div>
-                                page
+								
                                 <?php if ($this->_currentPage>1) {
                             echo $this->_currentPage;
                         } else {
                             echo 1;
-                        }?> of
+                        }?> /
                                 <?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?>
                                 <div class="section-spacer"></div>
                                 <?php $this->pageLink(

@@ -15,7 +15,12 @@
                 <i class="material-icons" role="presentation">arrow_back</i>
             </a>
         </div>
-        <div class="mdl-tooltip" for="backhome-div">Back</div>
+        <div class="mdl-tooltip" for="backhome-div">
+			<?php if ($this->options->langis == '0'): ?> Back
+			<?php elseif ($this->options->langis == '1'): ?> 返回
+			<?php elseif ($this->options->langis == '2'): ?> 返回
+            <?php endif; ?>
+		</div>
 
         <div class="demo-blog__posts mdl-grid">
 
@@ -118,13 +123,15 @@
                         </button>
                         '); ?>
                 <div class="section-spacer"></div>
-                page
-                <?php if ($this->_currentPage>1) {
-    echo $this->_currentPage;
-} else {
-    echo 1;
-}?> of
-                <?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?>
+                <!-- page -->
+                <?php 
+					if ($this->_currentPage>1) {
+						echo $this->_currentPage;
+					} else {
+						echo 1;
+					}
+				?> /
+                <?php echo ceil($this->getTotal() / $this->parameter->pageSize); ?>
                 <div class="section-spacer"></div>
                 <?php $this->pageLink('
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">

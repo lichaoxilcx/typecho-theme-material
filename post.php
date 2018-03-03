@@ -15,7 +15,12 @@
                 <i class="material-icons" role="presentation">arrow_back</i>
             </a>
         </div>
-        <div class="mdl-tooltip" for="backhome-div">Back</div>
+        <div class="mdl-tooltip" for="backhome-div">
+			<?php if ($this->options->langis == '0'): ?> Back
+			<?php elseif ($this->options->langis == '1'): ?> 返回
+			<?php elseif ($this->options->langis == '2'): ?> 返回
+            <?php endif; ?>
+		</div>
 
         <!-- Post module -->
         <div class="post-module demo-blog__posts mdl-grid">
@@ -140,9 +145,9 @@
                 <?php $this->theNext('%s', null, array('title' => '
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <i class="material-icons">arrow_back</i>
-                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newer', 'tagClass' => 'prev-content')); ?>
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇', 'tagClass' => 'prev-content')); ?>
                 <div class="section-spacer"></div>
-                <?php $this->thePrev('%s', null, array('title' => 'Older&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <?php $this->thePrev('%s', null, array('title' => '下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <i class="material-icons">arrow_forward</i>
                         </button>', 'tagClass' => 'prev-content')); ?>
             </nav>

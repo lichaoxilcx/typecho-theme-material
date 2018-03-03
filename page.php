@@ -15,7 +15,12 @@
                 <i class="material-icons" role="presentation">arrow_back</i>
             </a>
         </div>
-        <div class="mdl-tooltip" for="backhome-div">Back</div>
+        <div class="mdl-tooltip" for="backhome-div">
+			<?php if ($this->options->langis == '0'): ?> Back
+			<?php elseif ($this->options->langis == '1'): ?> 返回
+			<?php elseif ($this->options->langis == '2'): ?> 返回
+            <?php endif; ?>
+		</div>
 
         <!-- Page module -->
         <div class="page-module demo-blog__posts mdl-grid">
@@ -55,13 +60,13 @@
                     <!-- favorite -->
                     <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like" data-cid="<?php $this->cid();?>" data-num="<?php $this->likesNum();?>">
                                 <i class="material-icons mdl-badge mdl-badge--overlap" role="presentation" data-badge="<?php $this->likesNum();?>">favorite</i>
-                                <span class="visuallyhidden">favorites</span>
+                                <span class="visuallyhidden">喜欢</span>
                             </button>
                     <!-- share -->
                     <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                                 <!-- For modern browsers. -->
-                                <i class="material-icons" role="presentation">bookmarks</i>
-                                <span class="visuallyhidden">share</span>
+                                <i class="material-icons" role="presentation">书签</i>
+                                <span class="visuallyhidden">分享</span>
                             </button>
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
                         <?php if (class_exists("TeStat_Plugin")): ?>
@@ -126,9 +131,9 @@
                 <?php $this->theNext('%s', null, array('title' => '<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <!-- For modern browsers. -->
                             <i class="material-icons">arrow_back</i>
-                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newer', 'tagClass' => 'prev-content')); ?>
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇', 'tagClass' => 'prev-content')); ?>
                 <div class="section-spacer"></div>
-                <?php $this->thePrev('%s', null, array('title' => 'Older&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <?php $this->thePrev('%s', null, array('title' => '下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <!-- For modern browsers. -->
                             <i class="material-icons">arrow_forward</i>
                         </button>', 'tagClass' => 'prev-content')); ?>

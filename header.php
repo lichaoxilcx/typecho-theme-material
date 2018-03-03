@@ -146,11 +146,11 @@
             <style>
                 .fade {
                   transition: all <?php $this->options->loadingbuffer(); ?>ms linear;
-                  -webkit-transform: translate3d(0,0,0);
-                  -moz-transform: translate3d(0,0,0);
-                  -ms-transform: translate3d(0,0,0);
-                  -o-transform: translate3d(0,0,0);
-                  transform: translate3d(0,0,0);
+                  //-webkit-transform: translate3d(0,0,0);
+                  //-moz-transform: translate3d(0,0,0);
+                  //-ms-transform: translate3d(0,0,0);
+                  //-o-transform: translate3d(0,0,0);
+                  //transform: translate3d(0,0,0);
                   opacity: 1;
                 }
 

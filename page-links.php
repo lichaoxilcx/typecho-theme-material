@@ -50,6 +50,12 @@ $this->need('header.php'); ?>
             font-size: 20px;
             line-height: 50px;
         }
+		@media screen and (max-width: 480px) {
+			.mdl-mini-footer {
+				padding: 30px 0 20px;
+				height: 200px;
+			}
+		}
     </style>
 
     <!-- Sidebar hamburger button -->
