@@ -110,11 +110,11 @@ function themeConfig($form)
     $langis = new Typecho_Widget_Helper_Form_Element_Radio('langis',
         array(
             '0' => _t('English <br />'),
-            '1' => _t('简体中文 <br />'),
-            '2' => _t('繁体中文 <br />')
+            '1' => _t('简体中文 <br />')//,
+            // '2' => _t('繁体中文 <br />')
         ),
 
-        '0', _t('界面语言设置'), _t("默认使用英文")
+        '1', _t('界面语言设置'), _t("默认使用中文")
     );
     $form->addInput($langis);
 
