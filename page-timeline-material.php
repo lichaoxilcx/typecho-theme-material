@@ -415,8 +415,8 @@ $this->need('header.php'); ?>
            <div class="md-timeline-content">
                <div class="md-timeline-title"><a href="<?php $archive->permalink() ?>"><?php $archive->title() ?></a></div>
                <div class="md-timeline-info">
-                   <span class="md-timeline-info-span">Tags: <?php $archive->tags(' ', true, NULL); ?></span>
-                   <span class="md-timeline-info-span">Categorias: <?php $archive->category(' '); ?></span>
+                   <span class="md-timeline-info-span"><?php echo $language[$this->options->langis]['tag']); ?>: <?php $archive->tags(' ', true, NULL); ?></span>
+                   <span class="md-timeline-info-span"><?php echo $language[$this->options->langis]['category']); ?>: <?php $archive->category(' '); ?></span>
                </div>
                <p class="md-timeline-excerpt"><?php $archive->excerpt(100, '...'); ?></p>
            </div>

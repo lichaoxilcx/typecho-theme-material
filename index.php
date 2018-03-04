@@ -7,8 +7,9 @@
  * @version 2.4.1
  * @link http://lichaoxi.com
  */
+    include('language.php');
+    $this->need('header.php');?>
 
-$this->need('header.php');?>
 
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
 
@@ -111,45 +112,33 @@ $this->need('header.php');?>
 
                                     <a href="<?php $this->options->feedUrl(); ?>" class="md-menu-list-a">
                                         <li class="mdl-menu__item mdl-js-ripple-effect">
-                                            <?php if ($this->options->langis == '0'): ?> Article RSS
-                                            <?php else: ?> 文章 RSS
-                                            <?php endif; ?>
+                                            <?php echo $language[$this->options->langis]['article_rss']; ?>
                                         </li>
                                     </a>
                                     <!-- 文章的RSS地址连接 -->
                                     <a class="md-menu-list-a" href="https://www.facebook.com/sharer/sharer.php?u=<?php $this->options->siteUrl(); ?>">
                                         <li class="mdl-menu__item">
-                                            <?php if ($this->options->langis == '0'): ?> Share to Facebook
-                                            <?php else: ?> 分享到 Facebook
-                                            <?php endif; ?>
+                                            <?php echo $language[$this->options->langis]['share_to_facebook']; ?>
                                         </li>
                                     </a>
                                     <a class="md-menu-list-a" href="https://telegram.me/share/url?url=<?php $this->options->siteUrl(); ?>&text=<?php $this->options->title(); ?>" >
                                         <li class="mdl-menu__item">
-                                            <?php if ($this->options->langis == '0'): ?> Share to Telegram
-                                            <?php else: ?> 分享到 Telegram
-                                            <?php endif; ?>
+                                            <?php echo $language[$this->options->langis]['share_to_telegram']; ?>
                                         </li>
                                     </a>
                                     <a class="md-menu-list-a" href="https://twitter.com/intent/tweet?text=<?php $this->options->title(); ?>&url=<?php $this->options->siteUrl(); ?>&via=<?php $this->author->screenName(); ?>">
                                         <li class="mdl-menu__item">
-                                            <?php if ($this->options->langis == '0'): ?> Share to Twitter
-                                            <?php else: ?> 分享到 Twitter
-                                            <?php endif; ?>
+                                            <?php echo $language[$this->options->langis]['share_to_twitter']; ?>
                                         </li>
                                     </a>
                                     <a class="md-menu-list-a" href="https://plus.google.com/share?url=<?php $this->options->siteUrl(); ?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                                         <li class="mdl-menu__item">
-                                            <?php if ($this->options->langis == '0'): ?> Share to Google+
-                                            <?php else: ?> 分享到 Google+
-                                            <?php endif; ?>
+                                            <?php echo $language[$this->options->langis]['share_to_google_plus']; ?>
                                         </li>
                                     </a>
                                     <a class="md-menu-list-a" href="http://service.weibo.com/share/share.php?appkey=&title=<?php $this->options->title(); ?>&url=<?php $this->options->siteUrl(); ?>&pic=&searchPic=false&style=simple ">
                                         <li class="mdl-menu__item">
-                                            <?php if ($this->options->langis == '0'): ?> Share to Weibo
-                                            <?php else: ?> 分享到新浪微博
-                                            <?php endif; ?>
+                                            <?php echo $language[$this->options->langis]['share_to_weibo']; ?>
                                         </li>
                                     </a>
                                 </ul>
@@ -212,13 +201,7 @@ $this->need('header.php');?>
                                     <?php $this->excerpt(80, '...'); ?> &nbsp;&nbsp;&nbsp;
                                     <span>
                                 <a href="<?php $this->permalink(); ?>" target="_self">
-                                    <?php if ($this->options->langis == '0'): ?>
-                                        Continue Reading
-                                    <?php elseif ($this->options->langis == '1'): ?>
-                                        继续阅读
-                                    <?php elseif ($this->options->langis == '2'): ?>
-                                        繼續閱讀
-                                    <?php endif; ?>
+                                    <?php echo $language[$this->options->langis]['continue_reading']; ?>
                                 </a>
                             </span>
                                 </div>
@@ -248,12 +231,7 @@ $this->need('header.php');?>
                                     <div id="article-category-comment" style="color:<?php $this->options->alinkcolor(); ?>">
                                         <?php $this->category(', '); ?> |
                                         <a href="<?php $this->permalink() ?>">
-                                            <!-- 使用多说评论 -->
-                                            <?php if ($this->options->commentis == '1'): ?><span class="ds-thread-count" data-thread-key="<?php echo $this->cid;?>" data-count-type="comments"></span>
-                                            <!-- 使用原生评论 -->
-                                            <?php else: ?>
-                                            <?php $this->commentsNum('%d 评论'); ?>
-                                            <?php endif; ?>
+                                            <?php $this->commentsNum('%d '.$language[$this->options->langis]['comment']); ?>
                                         </a>
 
                                     </div>

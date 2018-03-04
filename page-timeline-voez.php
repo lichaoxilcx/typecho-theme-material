@@ -127,7 +127,7 @@ $this->need('header.php'); ?>
         <div class="md-timeline-event-copy">
           <p class="md-timeline-event-thumbnail"><?php $archive->date('M j Y'); ?> - <?php $archive->author() ?></p>
           <h3><a href="<?php $archive->permalink() ?>"><?php $archive->title() ?></a></h3>
-          <h4><strong>Categorias:</strong> <?php $archive->category(' '); ?> <br /><strong>Tags:</strong> <?php $archive->tags(' ', true, NULL); ?></h4>
+          <h4><strong><?php echo $language[$this->options->langis]['category']); ?>:</strong> <?php $archive->category(' '); ?> <br /><strong><?php echo $language[$this->options->langis]['tag']); ?>:</strong> <?php $archive->tags(' ', true, NULL); ?></h4>
           <p><?php $archive->excerpt(100, '...'); ?></p>
         </div>
       </li>

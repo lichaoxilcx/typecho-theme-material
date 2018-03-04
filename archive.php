@@ -1,4 +1,7 @@
-<?php $this->need('header.php'); ?>
+<?php
+    include('language.php');
+    $this->need('header.php');
+?>
 
 <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded <?php if (!empty($this->options->switch) && in_array('ShowLoadingLine', $this->options->switch)): ?>fade out<?php endif; ?>">
 
@@ -16,10 +19,7 @@
             </a>
         </div>
         <div class="mdl-tooltip" for="backhome-div">
-			<?php if ($this->options->langis == '0'): ?> Back
-			<?php elseif ($this->options->langis == '1'): ?> 返回
-			<?php elseif ($this->options->langis == '2'): ?> 返回
-            <?php endif; ?>
+			<?php echo $language[$this->options->langis]['back']; ?>
 		</div>
 
         <div class="demo-blog__posts mdl-grid">
@@ -53,16 +53,10 @@
                     <!--  $this->content('Continue Reading...');  -->
                     <?php $this->excerpt(80, '...'); ?> &nbsp;&nbsp;&nbsp;
                     <span>
-                                <a href="<?php $this->permalink(); ?>" target="_self">
-                                    <?php if ($this->options->langis == '0'): ?>
-                                        Continue Reading
-                                    <?php elseif ($this->options->langis == '1'): ?>
-                                        继续阅读
-                                    <?php elseif ($this->options->langis == '2'): ?>
-                                        繼續閱讀
-                                    <?php endif; ?>
-                                </a>
-                            </span>
+                        <a href="<?php $this->permalink(); ?>" target="_self">
+                            <?php echo $language[$this->options->langis]['continue_reading']; ?>
+                        </a>
+                    </span>
                 </div>
 
                 <!-- Articli info-->
@@ -81,32 +75,24 @@
                         <div>
                             <span class="author-name-span"><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span>
                             <span>
-                                        <?php if ($this->options->langis == '0'): ?>
-                                            <?php $this->date('F j, Y'); ?>
-                                        <?php else: ?>
-                                            <?php $this->dateWord(); ?>
-                                        <?php endif; ?>
-                                    </span>
+                                <?php if ($this->options->langis == '0'): ?>
+                                    <?php $this->date('F j, Y'); ?>
+                                <?php else: ?>
+                                    <?php $this->dateWord(); ?>
+                                <?php endif; ?>
+                            </span>
                         </div>
                     </div>
-                    
+
                     <div id="article-category-comment" style="color:<?php $this->options->alinkcolor(); ?>">
                     <?php $this->category(', '); ?> |
                         <a href="<?php $this->permalink() ?>">
-                            <!-- 使用多说评论 -->
-                            <?php if ($this->options->commentis == '1'): ?><span class="ds-thread-count" data-thread-key="<?php echo $this->cid;?>" data-count-type="comments"></span>
-                            <!-- 使用原生评论 -->
-                            <?php else: ?>
-                            <?php $this->commentsNum('%d 评论'); ?>
-                            <?php endif; ?>
+                            <?php $this->commentsNum('%d '.$language[$this->options->langis]['comment']); ?>
                         </a>
                         <?php if (class_exists("Stat_Plugin")): ?> |&nbsp;
                             <?php $this->views(); ?>
                             <?php $this->sticky(); ?>
-                            <?php if ($this->options->langis == '0'): ?>Views
-                            <?php elseif ($this->options->langis == '1'): ?>浏览
-                            <?php elseif ($this->options->langis == '2'): ?>流覽
-                            <?php endif; ?>
+                            <?php echo $language[$this->options->langis]['view']; ?>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -124,7 +110,7 @@
                         '); ?>
                 <div class="section-spacer"></div>
                 <!-- page -->
-                <?php 
+                <?php
 					if ($this->_currentPage>1) {
 						echo $this->_currentPage;
 					} else {

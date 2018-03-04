@@ -153,8 +153,8 @@
             <!--mdl-mini-footer-right-section-->
             <div class="mdl-mini-footer--right-section">
                 <div>
-                    <div class="footer-develop-div">系统由 <a href="http://typecho.org" target="_blank" class="footer-develop-a">Typecho</a> 驱动</div>
-                    <div class="footer-develop-div">主题由 <a href="http://lichaoxi.com" target="_blank" class="footer-develop-a">LiCxi</a> & <a href="https://viosey.com" target="_blank" class="footer-develop-a">Viosey</a> 支持</div>
+                    <div class="footer-develop-div"><?php echo $language[$this->options->langis]['powered_by_typecho']; ?></div>
+                    <div class="footer-develop-div"><?php echo $language[$this->options->langis]['theme_by_material']; ?></div>
                 </div>
             </div>
         </footer>
@@ -251,9 +251,6 @@
         $(".demo-blog__posts").bind("pjax.start",
             function() {
                 $(".demo-blog__posts").css("opacity", "0.6");
-                // $(".spinner").css("opacity","1");
-                // $(".spinner").show();
-
             });
         //绑定跳转结束事件
         $(".demo-blog__posts").bind("pjax.end",

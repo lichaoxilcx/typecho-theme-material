@@ -1,4 +1,7 @@
-<?php $this->need('header.php'); ?>
+<?php
+    include('language.php');
+    $this->need('header.php');
+?>
 
 <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
 
@@ -16,10 +19,7 @@
             </a>
         </div>
         <div class="mdl-tooltip" for="backhome-div">
-			<?php if ($this->options->langis == '0'): ?> Back
-			<?php elseif ($this->options->langis == '1'): ?> 返回
-			<?php elseif ($this->options->langis == '2'): ?> 返回
-            <?php endif; ?>
+			<?php echo $language[$this->options->langis]['back']; ?>
 		</div>
 
         <!-- Page module -->
@@ -49,12 +49,12 @@
                         <span class="author-name-span"><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span>
                         <!-- Articel date -->
                         <span>
-                                    <?php if ($this->options->langis == '0'): ?>
-                                        <?php $this->date('F j, Y'); ?>
-                                    <?php else: ?>
-                                        <?php $this->dateWord(); ?>
-                                    <?php endif; ?>
-                                </span>
+                            <?php if ($this->options->langis == '0'): ?>
+                                <?php $this->date('F j, Y'); ?>
+                            <?php else: ?>
+                                <?php $this->dateWord(); ?>
+                            <?php endif; ?>
+                        </span>
                     </div>
                     <div class="section-spacer"></div>
                     <!-- favorite -->
@@ -73,45 +73,35 @@
                         <a class="md-menu-list-a" href="#">
                             <li class="mdl-menu__item">
                                 <?php ($q=$this->viewsNum); if (($q%2)!=0) {
-    echo($q-1)/2;
-} else {
-    echo $q/2;
-} ?> 浏览</li>
+                                    echo($q-1)/2;
+                                } else {
+                                    echo $q/2;
+                                } ?> <?php echo $language[$this->options->langis]['view']; ?></li>
                         </a>
                         <?php endif; ?>
                         <a class="md-menu-list-a" href="https://www.facebook.com/sharer/sharer.php?u=<?php $this->options->permalink(); ?>">
                             <li class="mdl-menu__item">
-                                <?php if ($this->options->langis == '0'): ?> Share to Facebook
-                                <?php else: ?> 分享到 Facebook
-                                <?php endif; ?>
+                                <?php echo $language[$this->options->langis]['share_to_facebook']; ?>
                             </li>
                         </a>
                         <a class="md-menu-list-a" href="https://telegram.me/share/url?url=<?php $this->options->permalink(); ?>&text=<?php $this->options->title(); ?>" >
                             <li class="mdl-menu__item">
-                                <?php if ($this->options->langis == '0'): ?> Share to Telegram
-                                <?php else: ?> 分享到 Telegram
-                                <?php endif; ?>
+                                <?php echo $language[$this->options->langis]['share_to_telegram']; ?>
                             </li>
                         </a>
                         <a class="md-menu-list-a" href="https://twitter.com/intent/tweet?text=<?php $this->title(); ?>&url=<?php $this->permalink() ?>&via=<?php $this->user->screenName(); ?>">
                             <li class="mdl-menu__item">
-                                <?php if ($this->options->langis == '0'): ?> Share to Twitter
-                                <?php else: ?> 分享到 Twitter
-                                <?php endif; ?>
+                                <?php echo $language[$this->options->langis]['share_to_twitter']; ?>
                             </li>
                         </a>
                         <a class="md-menu-list-a" href="https://plus.google.com/share?url=<?php $this->permalink(); ?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                             <li class="mdl-menu__item">
-                                <?php if ($this->options->langis == '0'): ?> Share to Google+
-                                <?php else: ?> 分享到 Google+
-                                <?php endif; ?>
+                                <?php echo $language[$this->options->langis]['share_to_google_plus']; ?>
                             </li>
                         </a>
                         <a class="md-menu-list-a" href="http://service.weibo.com/share/share.php?appkey=&title=<?php $this->options->title(); ?>&url=<?php $this->options->permalink(); ?>&pic=&searchPic=false&style=simple ">
                             <li class="mdl-menu__item">
-                                <?php if ($this->options->langis == '0'): ?> Share to Weibo
-                                <?php else: ?> 分享到新浪微博
-                                <?php endif; ?>
+                                <?php echo $language[$this->options->langis]['share_to_weibo']; ?>
                             </li>
                         </a>
                     </ul>
@@ -131,9 +121,9 @@
                 <?php $this->theNext('%s', null, array('title' => '<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <!-- For modern browsers. -->
                             <i class="material-icons">arrow_back</i>
-                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇', 'tagClass' => 'prev-content')); ?>
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$language[$this->options->langis]['newer'], 'tagClass' => 'prev-content')); ?>
                 <div class="section-spacer"></div>
-                <?php $this->thePrev('%s', null, array('title' => '下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <?php $this->thePrev('%s', null, array('title' => $language[$this->options->langis]['older'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <!-- For modern browsers. -->
                             <i class="material-icons">arrow_forward</i>
                         </button>', 'tagClass' => 'prev-content')); ?>

@@ -10,17 +10,18 @@ function themeConfig($form)
     font-size: 16px;">感谢您使用 Material 主题</span>
     <span style="margin-bottom:10px;display:block">请关注 <a href="https://github.com/lichaoxilcx/typecho-theme-material" target="_blank" style="color:#3384da;font-weight:bold;text-decoration:underline">Github-Material</a> 以获得<span style="color:#df3827;font-weight:bold;">最新版本支持</span></span>
     <a href="mailto:i@lichaoxi.com" >帮助&支持</a> &nbsp;
-    <a href="https://github.com/viosey/typecho-theme-material/issues" target="_blank">建议&反馈</a>
+    <a href="https://github.com/lichaoxilcx/typecho-theme-material/issues" target="_blank">建议&反馈</a>
     </p>';
 
     $switch = new Typecho_Widget_Helper_Form_Element_Checkbox('switch',
         array(
-            'ShowUpyun' => _t('侧边栏显示 upyun 联盟 logo'),
+            // 'ShowUpyun' => _t('侧边栏显示 upyun 联盟 logo'),
             'SmoothScroll' => _t('平滑滚动效果'),
             'ShowLoadingLine' => _t('顶部 loading 加载进度条效果'),
             'PJAX' => _t('使用 pjax'),
             'atargetblank' => _t('链接以新标签页形式打开'),
             'Pangu' => _t('引用 Pangu.js 实现中英文间自动添加空格'),
+            'AllowCanvasNest' => _t('使用蜘蛛丝背景（可与其他背景兼容）'),
         ),
 
         //Default choose
@@ -96,12 +97,11 @@ function themeConfig($form)
 
     $langis = new Typecho_Widget_Helper_Form_Element_Radio('langis',
         array(
-            '0' => _t('English <br />'),
-            '1' => _t('简体中文 <br />')//,
-            // '2' => _t('繁体中文 <br />')
+            'en' => _t('English <br />'),
+            'zh-CN' => _t('简体中文 <br />')
         ),
 
-        '1', _t('界面语言设置'), _t("默认使用中文")
+        'zh-CN', _t('界面语言设置'), _t("默认使用中文")
     );
     $form->addInput($langis);
 
@@ -160,13 +160,13 @@ function themeConfig($form)
     );
     $form->addInput($footersns);
 
-    $TwitterURL = new Typecho_Widget_Helper_Form_Element_Text('TwitterURL', null, _t('NULL'), _t('Twitter 地址'), null);
+    $TwitterURL = new Typecho_Widget_Helper_Form_Element_Text('TwitterURL', null, null, _t('Twitter 地址'), null);
     $form->addInput($TwitterURL);
 
-    $FacebookURL = new Typecho_Widget_Helper_Form_Element_Text('FacebookURL', null, _t('NULL'), _t('Facebook 地址'), null);
+    $FacebookURL = new Typecho_Widget_Helper_Form_Element_Text('FacebookURL', null, null, _t('Facebook 地址'), null);
     $form->addInput($FacebookURL);
 
-    $GooglePlusURL = new Typecho_Widget_Helper_Form_Element_Text('GooglePlusURL', null, _t('NULL'), _t('Google+ 地址'), null);
+    $GooglePlusURL = new Typecho_Widget_Helper_Form_Element_Text('GooglePlusURL', null, null, _t('Google+ 地址'), null);
     $form->addInput($GooglePlusURL);
 
     $WeiboURL = new Typecho_Widget_Helper_Form_Element_Text('WeiboURL', null, null, _t('新浪微博地址'), null);

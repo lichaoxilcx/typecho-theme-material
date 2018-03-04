@@ -1,6 +1,7 @@
 <?php $this->comments()->to($comments); ?>
 <?php function threadedComments($comments, $options)
 {
+    global $language;
     $commentClass = '';
     $commentLevelClass = $comments->_levels > 0 ? ' comment-child' : ' comment-parent';  //评论层数大于0为子级，否则是父级
 ?>
@@ -30,7 +31,7 @@
             <span><?php $comments->date('Y-m-d, H:i'); ?></span>
 			<!-- reply -->
 			<?php
-				$comments->reply();
+				$comments->reply($GLOBALS['language'][$options->langis]['reply']);
 			?>
         </div>
     </header>
@@ -75,10 +76,10 @@
 
             <!-- Display user name & logout -->
             <br />
-            <p style="color:#8A8A8A;" class="visitor-name-span">Logged in as
+            <p style="color:#8A8A8A;" class="visitor-name-span"><?php echo $language[$this->options->langis]['logged_in_as']; ?>
                 <a href="<?php $this->options->adminUrl(); ?>" style="font-weight:400"><?php $this->user->screenName(); ?></a>.
-                <a href="<?php $this->options->logoutUrl(); ?>" title="Logout" style="font-weight:400">Logout &raquo;</a>
-                <?php $comments->cancelReply(); ?>
+                <a href="<?php $this->options->logoutUrl(); ?>" title="Logout" style="font-weight:400"><?php echo $language[$this->options->langis]['logout']; ?> &raquo;</a>
+                <?php $comments->cancelReply($language[$this->options->langis]['cancel_reply']); ?>
             </p>
 
             <!-- If user didn't login -->
@@ -89,11 +90,8 @@
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input type="text" name="author" class="mdl-textfield__input login-input-info" />
                     <label for="author" class="mdl-textfield__label">
-                                    <?php if ($this->options->langis == '0'): ?> Name*
-                                    <?php elseif ($this->options->langis == '1'): ?> 昵称*
-                                    <?php elseif ($this->options->langis == '2'): ?> 昵称*
-                                    <?php endif; ?>
-                                </label>
+                        <?php echo $language[$this->options->langis]['name']; ?>*
+                    </label>
                 </div>
             </div>
 
@@ -102,11 +100,8 @@
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input type="email" name="mail" class="mdl-textfield__input login-input-info" />
                     <label for="mail" class="mdl-textfield__label">
-                                    <?php if ($this->options->langis == '0'): ?> Email*
-                                    <?php elseif ($this->options->langis == '1'): ?> 邮箱*
-                                    <?php elseif ($this->options->langis == '2'): ?> 邮箱*
-                                    <?php endif; ?>
-                                </label>
+                        <?php echo $language[$this->options->langis]['email']; ?>*
+                    </label>
                 </div>
             </div>
 
@@ -116,15 +111,12 @@
                     <input type="url" name="url" id="visitor-url" class="mdl-textfield__input login-input-info" />
                     <!--  placeholder="http://"-->
                     <label for="url" class="mdl-textfield__label">
-                                    <?php if ($this->options->langis == '0'): ?> Website
-                                    <?php elseif ($this->options->langis == '1'): ?> 网站
-                                    <?php elseif ($this->options->langis == '2'): ?> 邮箱*
-                                    <?php endif; ?>
-                                </label>
+                        <?php echo $language[$this->options->langis]['website']; ?>*
+                    </label>
                 </div>
             </div>
             <div class="cancel-comment-reply">
-                <?php $comments->cancelReply(); ?>
+                <?php $comments->cancelReply($language[$this->options->langis]['cancel_reply']); ?>
             </div>
 
             <?php endif; ?>
@@ -133,10 +125,7 @@
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="comment-input-div" style="width: 90%;">
                 <textarea name="text" rows="1" id="comment" class="mdl-textfield__input"></textarea>
                 <label for="comment" class="mdl-textfield__label">
-                            <?php if ($this->options->langis == '0'): ?> Join the discussion
-                            <?php elseif ($this->options->langis == '1'): ?> 加入讨论吧...
-                            <?php elseif ($this->options->langis == '2'): ?> 加入讨论吧...
-                            <?php endif; ?>
+                        <?php echo $language[$this->options->langis]['join_the_discussion']; ?>
                         </label>
             </div>
 
@@ -147,10 +136,7 @@
                         <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">add comment</span>
                     </button>'); ?>
             <div class="mdl-tooltip" for="comment-button">
-                <?php if ($this->options->langis == '0'): ?> Submit
-                <?php elseif ($this->options->langis == '1'): ?> 提交
-                <?php elseif ($this->options->langis == '2'): ?> 提交
-                <?php endif; ?>
+                <?php echo $language[$this->options->langis]['submit']; ?>
             </div>
             </span>
 
@@ -162,7 +148,7 @@
     <?php else: ?>
 
     <div class="comments__closed">
-        <span id="commentCount">评论已被关闭</span>
+        <span id="commentCount"><?php echo $language[$this->options->langis]['comment_has_been_closed']; ?></span>
     </div>
 
     <?php endif; ?>

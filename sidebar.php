@@ -49,48 +49,33 @@
                     <li>
                         <a href="<?php $this->options->adminUrl(); ?>" tabindex="-1">
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">account_circle</i>
-                            <?php if ($this->options->langis == '0'): ?> Profile
-                            <?php elseif ($this->options->langis == '1'): ?> 用户概要
-                            <?php elseif ($this->options->langis == '2'): ?> 使用者概要
-                            <?php endif; ?>
+                            <?php echo $language[$this->options->langis]['profile']; ?>
                         </a>
                     </li>
                     <li>
                         <a href="<?php $this->options->adminUrl('options-theme.php'); ?>" tabindex="-1">
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">settings</i>
-                            <?php if ($this->options->langis == '0'): ?> Settings
-                            <?php elseif ($this->options->langis == '1'): ?> 设置外观
-                            <?php elseif ($this->options->langis == '2'): ?> 設置外觀
-                            <?php endif; ?>
+                            <?php echo $language[$this->options->langis]['setting']; ?>
                         </a>
                     </li>
                     <li>
                         <a href="<?php $this->options->logoutUrl(); ?>" class="md-menu-list-a" tabindex="-1">
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">exit_to_app</i>
-                            <?php if ($this->options->langis == '0'): ?> Exit
-                            <?php elseif ($this->options->langis == '1'): ?> 退出登录
-                            <?php elseif ($this->options->langis == '2'): ?> 退出登錄
-                            <?php endif; ?>
+                            <?php echo $language[$this->options->langis]['exit']; ?>
                         </a>
                     </li>
                     <?php else: ?>
                     <li>
                         <a href="<?php $this->options->loginUrl(); ?>" class="md-menu-list-a" tabindex="-1">
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">fingerprint</i>
-                            <?php if ($this->options->langis == '0'): ?> Login
-                            <?php elseif ($this->options->langis == '1'): ?> 用户登录
-                            <?php elseif ($this->options->langis == '2'): ?> 使用者登錄
-                            <?php endif; ?>
+                            <?php echo $language[$this->options->langis]['login']; ?>
                         </a>
                     </li>
                     <?php if($this->options->allowRegister): ?>
                     <li>
                         <a href="<?php $this->options->adminUrl('register.php'); ?>" class="md-menu-list-a" tabindex="-1">
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">person_add</i>
-                            <?php if ($this->options->langis == '0'): ?> Register
-                            <?php elseif ($this->options->langis == '1'): ?> 用户注册
-                            <?php elseif ($this->options->langis == '2'): ?> 使用者註冊
-                            <?php endif; ?>
+                            <?php echo $language[$this->options->langis]['register']; ?>
                         </a>
                     </li>
                     <?php endif; ?>
@@ -102,10 +87,7 @@
             <li id="sidebar-first-li">
                 <a href="<?php $this->options->siteUrl(); ?>" target="_self">
                     <i class="material-icons sidebar-material-icons">home</i>
-                    <?php if ($this->options->langis == '0'): ?> Homepage
-                    <?php elseif ($this->options->langis == '1'): ?> 主页
-                    <?php elseif ($this->options->langis == '2'): ?> 首頁
-                    <?php endif; ?>
+                    <?php echo $language[$this->options->langis]['homepage']; ?>
                 </a>
             </li>
 
@@ -165,10 +147,7 @@
             <li class="dropdown">
                 <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
                     <i class="material-icons sidebar-material-icons">inbox</i>
-                    <?php if ($this->options->langis == '0'): ?> Archives
-                    <?php elseif ($this->options->langis == '1'): ?> 归档
-                    <?php elseif ($this->options->langis == '2'): ?> 過往
-                    <?php endif; ?>
+                    <?php echo $language[$this->options->langis]['archive']; ?>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -188,10 +167,7 @@
             <li class="dropdown">
                 <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
                     <i class="material-icons sidebar-material-icons">apps</i>
-                    <?php if ($this->options->langis == '0'): ?> Categories
-                    <?php elseif ($this->options->langis == '1'): ?> 分类
-                    <?php elseif ($this->options->langis == '2'): ?> 分类
-                    <?php endif; ?>
+                    <?php echo $language[$this->options->langis]['category']; ?>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu" for="show-category-button">
@@ -219,10 +195,7 @@
             <!-- Article Numebr  -->
             <li>
                 <a href="#">
-                    <?php if ($this->options->langis == '0'): ?> Article Number
-                    <?php elseif ($this->options->langis == '1'): ?> 文章总数
-                    <?php elseif ($this->options->langis == '2'): ?> 文章總數
-                    <?php endif; ?>
+                    <?php echo $language[$this->options->langis]['article_number']; ?>
                     <span class="sidebar-badge"><?php echo $stat->publishedPostsNum;?></span>
                 </a>
             </li>

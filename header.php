@@ -54,18 +54,10 @@
                 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/ie-blocker.css'); ?>">
             <?php endif; ?>
 
-            <?php if ($this->options->langis == '0'): ?>
-                <?php if (!empty($this->options->CDNURL)): ?>
-                   <script src="<?php $this->options->CDNURL() ?>/MaterialCDN/js/ie-blocker.en.js" img-path="../img/ie-blocker/"></script>
-                <?php else: ?>
-                   <script src="<?php $this->options->themeUrl('js/ie-blocker.en.js'); ?>" img-path="../img/ie-blocker/"></script>
-                <?php endif; ?>
-            <?php elseif ($this->options->langis == '1'): ?>
-                <?php if (!empty($this->options->CDNURL)): ?>
-                    <script src="<?php $this->options->CDNURL() ?>/MaterialCDN/js/ie-blocker.zhCN.js" img-path="../img/ie-blocker/"></script>
-                <?php else: ?>
-                    <script src="<?php $this->options->themeUrl('js/ie-blocker.zhCN.js'); ?>" img-path="../img/ie-blocker/"></script>
-                <?php endif; ?>
+            <?php if (!empty($this->options->CDNURL)): ?>
+                <script src="<?php $this->options->CDNURL() ?>/MaterialCDN/js/ie-blocker.<?php echo $this->options->langis ?>.js" img-path="../img/ie-blocker/"></script>
+            <?php else: ?>
+                <script src="<?php $this->options->themeUrl('js/ie-blocker.<?php echo $this->options->langis ?>.js'); ?>" img-path="../img/ie-blocker/"></script>
             <?php endif; ?>
        <![endif]-->
 
@@ -329,3 +321,24 @@
     </head>
 
     <body>
+
+        <?php if($this->options->switch && in_array('AllowCanvasNest', $this->options->switch)): ?>
+        <script type="text/javascript">
+            function async_load() {
+
+                i.scrolling = "no";
+                i.frameborder = "0";
+                i.border = "0";
+                i.setAttribute("frameborder", "0", 0);
+                i.width = "100px";
+                i.height = "20px";
+                document.getElementByTagName("body").appendChild(i);
+            }
+
+            if (window.addEventListener) {window.addEventListener("load", async_load, false);}
+            else if (window.attachEvent) {window.attachEvent("onload", async_load);}
+            else {window.onload = async_load;}
+        </script>
+
+        <script type="text/javascript" color="0,0,0" opacity='0.7' zIndex="-2" count="300" src="<?php $this->options->themeUrl('js/canvas-nest.js'); ?>"></script>
+        <?php endif; ?>
