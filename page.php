@@ -60,13 +60,13 @@
                     <!-- favorite -->
                     <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like" data-cid="<?php $this->cid();?>" data-num="<?php $this->likesNum();?>">
                                 <i class="material-icons mdl-badge mdl-badge--overlap" role="presentation" data-badge="<?php $this->likesNum();?>">favorite</i>
-                                <span class="visuallyhidden">喜欢</span>
+                                <span class="visuallyhidden">favorite</span>
                             </button>
                     <!-- share -->
                     <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                                 <!-- For modern browsers. -->
-                                <i class="material-icons" role="presentation">书签</i>
-                                <span class="visuallyhidden">分享</span>
+                                <i class="material-icons" role="presentation">share</i>
+                                <span class="visuallyhidden">share</span>
                             </button>
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
                         <?php if (class_exists("TeStat_Plugin")): ?>
@@ -79,7 +79,7 @@
 } ?> 浏览</li>
                         </a>
                         <?php endif; ?>
-                        <a class="md-menu-list-a" href="https://www.facebook.com/sharer/sharer.php?u=<?php $this->options->permalink(); ?>">                                        
+                        <a class="md-menu-list-a" href="https://www.facebook.com/sharer/sharer.php?u=<?php $this->options->permalink(); ?>">
                             <li class="mdl-menu__item">
                                 <?php if ($this->options->langis == '0'): ?> Share to Facebook
                                 <?php else: ?> 分享到 Facebook

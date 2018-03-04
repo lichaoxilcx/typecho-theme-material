@@ -8,8 +8,8 @@ function themeConfig($form)
     margin-bottom: 10px;
     margin-top: 10px;
     font-size: 16px;">感谢您使用 Material 主题</span>
-    <span style="margin-bottom:10px;display:block">请关注 <a href="https://github.com/viosey/typecho-theme-material" target="_blank" style="color:#3384da;font-weight:bold;text-decoration:underline">Github-Material</a> 以获得<span style="color:#df3827;font-weight:bold;">最新版本支持</span></span>
-    <a href="mailto:viosey@outlook.com" >帮助&支持</a> &nbsp;
+    <span style="margin-bottom:10px;display:block">请关注 <a href="https://github.com/lichaoxilcx/typecho-theme-material" target="_blank" style="color:#3384da;font-weight:bold;text-decoration:underline">Github-Material</a> 以获得<span style="color:#df3827;font-weight:bold;">最新版本支持</span></span>
+    <a href="mailto:i@lichaoxi.com" >帮助&支持</a> &nbsp;
     <a href="https://github.com/viosey/typecho-theme-material/issues" target="_blank">建议&反馈</a>
     </p>';
 
@@ -143,20 +143,20 @@ function themeConfig($form)
 
     $footersns = new Typecho_Widget_Helper_Form_Element_Checkbox('footersns',
         array(
-            'ShowTwitter' => _t('显示 Twitter 图标 &emsp;'),
-            'ShowFacebook' => _t('显示 Facebook 图标 &emsp;'),
+            'ShowTwitter'    => _t('显示 Twitter 图标 &emsp;'),
+            'ShowFacebook'   => _t('显示 Facebook 图标 &emsp;'),
             'ShowGooglePlus' => _t('显示 Google+ 图标 &emsp;'),
-            'ShowWeibo' => _t('显示新浪微博图标 &emsp;'),
-            'ShowInstagram' => _t('显示 Instagram 图标 &emsp;'),
-            'ShowGithub' => _t('显示 Github 图标 &emsp;'),
-            'ShowTumblr' => _t('显示 Tumblr 图标 &emsp;'),
-            'ShowBilibili' => _t('显示 Bilibili 图标 &emsp;'),
-            'ShowTelegram' => _t('显示 Telegram 图标 &emsp;'),
-            'ShowZhihu' => _t('显示 Zhihu 图标 &emsp;'),
-            'ShowLinkedin' => _t('显示 Linkedin 图标 &emsp;'),
+            'ShowWeibo'      => _t('显示新浪微博图标 &emsp;'),
+            'ShowInstagram'  => _t('显示 Instagram 图标 &emsp;'),
+            'ShowGithub'     => _t('显示 Github 图标 &emsp;'),
+            'ShowTumblr'     => _t('显示 Tumblr 图标 &emsp;'),
+            'ShowBilibili'   => _t('显示 Bilibili 图标 &emsp;'),
+            'ShowTelegram'   => _t('显示 Telegram 图标 &emsp;'),
+            'ShowZhihu'      => _t('显示 Zhihu 图标 &emsp;'),
+            'ShowLinkedin'   => _t('显示 Linkedin 图标 &emsp;'),
         ),
 
-        array('ShowTwitter','ShowFacebook','ShowGooglePlus'), _t('页脚 SNS 图标按钮显示设置'), _t('开启后, 按钮显示于博客页脚位置')
+        array('ShowWeibo','ShowGithub','ShowZhihu'), _t('页脚 SNS 图标按钮显示设置'), _t('开启后, 按钮显示于博客页脚位置')
     );
     $form->addInput($footersns);
 

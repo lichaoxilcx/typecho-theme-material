@@ -83,6 +83,7 @@
                             <?php endif; ?>
                         </a>
                     </li>
+                    <?php if($this->options->allowRegister): ?>
                     <li>
                         <a href="<?php $this->options->adminUrl('register.php'); ?>" class="md-menu-list-a" tabindex="-1">
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">person_add</i>
@@ -92,6 +93,7 @@
                             <?php endif; ?>
                         </a>
                     </li>
+                    <?php endif; ?>
                     <?php endif; ?>
                 </ul>
             </li>
@@ -181,7 +183,7 @@
                 '); ?>
                 </ul>
             </li>
-            
+
             <!-- categories -->
             <li class="dropdown">
                 <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
@@ -204,7 +206,7 @@
                     <?php endwhile; ?>
                 </ul>
             </li>
-            
+
             <!-- divider -->
             <li class="divider"></li>
 
@@ -224,7 +226,7 @@
                     <span class="sidebar-badge"><?php echo $stat->publishedPostsNum;?></span>
                 </a>
             </li>
-			
+
             <!-- Pages  -->
             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                 <?php while ($pages->next()): ?>
@@ -234,14 +236,14 @@
                     </a>
                 </li>
             <?php endwhile; ?>
-        </ul>        
-        
+        </ul>
+
         <!-- Sidebar divider -->
         <div class="sidebar-divider"></div>
 
         <!-- Sidebar bottom text -->
 		<!-- 暂不显示
-        <a href="https://github.com/viosey/typecho-theme-material" target="_blank" class="sidebar-footer-text-a">
+        <a href="https://github.com/lichaoxilcx/typecho-theme-material" target="_blank" class="sidebar-footer-text-a">
             <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div">
                 <?php if ($this->options->langis == '0'): ?> Theme - Material
                 <?php elseif ($this->options->langis == '1'): ?> 主题 - Material

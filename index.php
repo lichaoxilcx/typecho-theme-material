@@ -3,9 +3,9 @@
  * 这是 Viosey 基于 Google Material Design 开发的 Typecho 主题
  *
  * @package Theme.Material
- * @author viosey
- * @version 2.4.0
- * @link https://viosey.com
+ * @author LiCxi
+ * @version 2.4.1
+ * @link http://lichaoxi.com
  */
 
 $this->need('header.php');?>
@@ -101,7 +101,7 @@ $this->need('header.php');?>
                                     </a>
                                     <?php endwhile; ?>
                                 </ul>
-                                                                
+
                                 <!--  Menu button-->
                                 <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                                     <i class="material-icons" role="presentation">more_vert</i>
@@ -117,7 +117,7 @@ $this->need('header.php');?>
                                         </li>
                                     </a>
                                     <!-- 文章的RSS地址连接 -->
-                                    <a class="md-menu-list-a" href="https://www.facebook.com/sharer/sharer.php?u=<?php $this->options->siteUrl(); ?>">                                        
+                                    <a class="md-menu-list-a" href="https://www.facebook.com/sharer/sharer.php?u=<?php $this->options->siteUrl(); ?>">
                                         <li class="mdl-menu__item">
                                             <?php if ($this->options->langis == '0'): ?> Share to Facebook
                                             <?php else: ?> 分享到 Facebook
@@ -255,7 +255,7 @@ $this->need('header.php');?>
                                             <?php $this->commentsNum('%d 评论'); ?>
                                             <?php endif; ?>
                                         </a>
-                                        
+
                                     </div>
 
                                 </div>
@@ -270,7 +270,7 @@ $this->need('header.php');?>
                             <i class="material-icons" role="presentation">arrow_back</i>
                         </button>'); ?>
                                 <div class="section-spacer"></div>
-								
+
                                 <?php if ($this->_currentPage>1) {
                             echo $this->_currentPage;
                         } else {

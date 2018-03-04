@@ -25,7 +25,7 @@
                 <i class="material-icons prime-i-add">add</i>
             </a>
         </div>
-        
+
         <!--Footer-->
         <footer class="mdl-mini-footer" id="bottom">
             <!--mdl-mini-footer-left-section-->
@@ -34,7 +34,7 @@
                 <?php if (!empty($this->options->CDNURL)): ?>
                 <a href="<?php $this->options->TwitterURL() ?>" target="view_window"><button class="mdl-mini-footer--social-btn social-btn social-btn__twitter" style="background-image: url(<?php $this->options->CDNURL() ?>/MaterialCDN/img/footer/footer_ico-twitter.png);">
                     <?php else: ?>
-                        <a href="<?php $this->options->TwitterURL() ?>" target="view_window"><button class="mdl-mini-footer--social-btn social-btn social-btn__twitter" style="background-image: url(<?php $this->options->themeUrl('img/footer/footer_ico-twitter.png'); ?>);">                                            
+                        <a href="<?php $this->options->TwitterURL() ?>" target="view_window"><button class="mdl-mini-footer--social-btn social-btn social-btn__twitter" style="background-image: url(<?php $this->options->themeUrl('img/footer/footer_ico-twitter.png'); ?>);">
                             <?php endif; ?>
                             <span class="visuallyhidden">Twitter</span>
                         </button></a>
@@ -95,7 +95,7 @@
                                         <span class="visuallyhidden">Tumblr</span>
                                     </button></a>
                 <?php endif;?>
-                
+
                 <?php if (!empty($this->options->footersns) && in_array('ShowBilibili', $this->options->footersns)) : ?>
                     <?php if (!empty($this->options->CDNURL)): ?>
                         <a href="<?php $this->options->BilibiliURL() ?>" target="view_window"><button class="mdl-mini-footer--social-btn social-btn social-btn__weibo" style="background-image: url(<?php $this->options->CDNURL() ?>/MaterialCDN/img/footer/footer_ico-bilibili.png);">
@@ -105,7 +105,7 @@
                 <span class="visuallyhidden">Bilibili</span>
                             </button></a>
                 <?php endif;?>
-                
+
                 <?php if (!empty($this->options->footersns) && in_array('ShowTelegram', $this->options->footersns)) : ?>
                     <?php if (!empty($this->options->CDNURL)): ?>
                         <a href="<?php $this->options->TelegramURL() ?>" target="view_window"><button class="mdl-mini-footer--social-btn social-btn social-btn__weibo" style="background-image: url(<?php $this->options->CDNURL() ?>/MaterialCDN/img/footer/footer_ico-telegram.png);">
@@ -115,7 +115,7 @@
                 <span class="visuallyhidden">Telegram</span>
                             </button></a>
                 <?php endif;?>
-                
+
                 <?php if (!empty($this->options->footersns) && in_array('ShowZhihu', $this->options->footersns)) : ?>
                     <?php if (!empty($this->options->CDNURL)): ?>
                         <a href="<?php $this->options->ZhihuURL() ?>" target="view_window"><button class="mdl-mini-footer--social-btn social-btn social-btn__weibo" style="background-image: url(<?php $this->options->CDNURL() ?>/MaterialCDN/img/footer/footer_ico-zhihu.png);">
@@ -125,7 +125,7 @@
                 <span class="visuallyhidden">Zhihu</span>
                             </button></a>
                 <?php endif;?>
-                
+
                 <?php if (!empty($this->options->footersns) && in_array('ShowLinkedin', $this->options->footersns)) : ?>
                     <?php if (!empty($this->options->CDNURL)): ?>
                         <a href="<?php $this->options->LinkedinURL() ?>" target="view_window"><button class="mdl-mini-footer--social-btn social-btn social-btn__weibo" style="background-image: url(<?php $this->options->CDNURL() ?>/MaterialCDN/img/footer/footer_ico-linkedin.png);">
@@ -135,15 +135,15 @@
                 <span class="visuallyhidden">Linkedin</span>
                             </button></a>
                 <?php endif;?>
-                
+
             </div>
-            
+
             <!--copyright-->
             <div id="copyright">Copyright &copy;
                 <?php echo date("Y"); ?>
                 <?php $this->options->title(); ?>
             </div>
-            
+
             <?php if (class_exists("Uptime_Plugin")): ?>
                 <div id="copyright">
                     <?php Uptime_Plugin::show(); ?>
@@ -154,7 +154,7 @@
             <div class="mdl-mini-footer--right-section">
                 <div>
                     <div class="footer-develop-div">系统由 <a href="http://typecho.org" target="_blank" class="footer-develop-a">Typecho</a> 驱动</div>
-                    <div class="footer-develop-div">主题由 <a href="https://viosey.com" target="_blank" class="footer-develop-a">Viosey</a> 支持</div>
+                    <div class="footer-develop-div">主题由 <a href="http://lichaoxi.com" target="_blank" class="footer-develop-a">LiCxi</a> & <a href="https://viosey.com" target="_blank" class="footer-develop-a">Viosey</a> 支持</div>
                 </div>
             </div>
         </footer>
