@@ -89,19 +89,6 @@ function themeConfig($form)
     $RandomPicAmnt = new Typecho_Widget_Helper_Form_Element_Text('RandomPicAmnt', null, _t('19'), _t('随机缩略图数量'), _t('img/random 图片的数量'));
     $form->addInput($RandomPicAmnt);
 
-    $commentis = new Typecho_Widget_Helper_Form_Element_Radio('commentis',
-        array(
-            '0' => _t('使用原生评论 &emsp;'),
-            '1' => _t('使用多说评论 &emsp;')
-        ),
-
-        '0', _t('文章评论'), _t("默认使用原生评论, 如果使用多说评论, 在 <b>'多说二级域名 (short_name)'</b> 中填入多说 short_name")
-    );
-    $form->addInput($commentis);
-
-    $DSshortname = new Typecho_Widget_Helper_Form_Element_Text('DSshortname', null, null, '多说二级域名 (short_name)', '要使用多说评论, 在这里填入多说的 short_name, 即二级域名.');
-    $form->addInput($DSshortname);
-
     $CDNURL = new Typecho_Widget_Helper_Form_Element_Text('CDNURL', null, null, _t('CDN 地址'), _t("
     新建一个'MaterialCDN' 文件夹, 把'css, fonts, img, js' 文件夹放进去, 然后把'MaterialCDN' 上传到到你的 CDN 储存空间根目录下<br />
     填入你的 CDN 地址, 如 <b>http://bucket.b0.upaiyun.com</b>"));
@@ -241,7 +228,7 @@ function showThumbnail($widget)
 
     if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
         echo $thumbUrl[1][0];
-    } elseif ($attach->isImage) {
+    } elseif (isset($attach->isImage) && $attach->isImage) {
         echo $attach->url;
     } else {
         echo $random;
