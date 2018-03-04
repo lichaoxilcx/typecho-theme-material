@@ -4,7 +4,7 @@
  *
  * @package Theme.Material
  * @author LiCxi
- * @version 2.4.1
+ * @version 1.0.0
  * @link http://lichaoxi.com
  */
     include('language.php');

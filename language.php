@@ -1,7 +1,5 @@
 <?php
 
-	// define('__MASTRIAL_LANGUAGE__', true);
-
 	$language = [
 
 		'en' => [ //English
