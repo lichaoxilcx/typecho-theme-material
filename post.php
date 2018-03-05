@@ -49,18 +49,18 @@
                         <span class="author-name-span"><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span>
                         <!-- Articel date -->
                         <span>
-                                    <?php if ($this->options->langis == '0'): ?>
-                                        <?php $this->date('F j, Y'); ?>
-                                    <?php else: ?>
-                                        <?php $this->dateWord(); ?>
-                                    <?php endif; ?>
-                                </span>
+                            <?php if ($this->options->langis == '0'): ?>
+                                <?php $this->date('F j, Y'); ?>
+                            <?php else: ?>
+                                <?php $this->dateWord(); ?>
+                            <?php endif; ?>
+                        </span>
                     </div>
                     <div class="section-spacer"></div>
                     <!-- favorite -->
                     <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like" data-cid="<?php $this->cid();?>" data-num="<?php $this->likesNum();?>">
                                 <i class="material-icons mdl-badge mdl-badge--overlap" role="presentation" data-badge="<?php $this->likesNum();?>">favorite</i>
-                                <span class="visuallyhidden">favorites</span>
+                                <span class="visuallyhidden">favorite</span>
                             </button>
                     <!-- view tags -->
                     <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">

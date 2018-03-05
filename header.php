@@ -325,14 +325,14 @@
         <?php if($this->options->switch && in_array('AllowCanvasNest', $this->options->switch)): ?>
         <script type="text/javascript">
             function async_load() {
-
+                var i = document.createElement("div");
                 i.scrolling = "no";
                 i.frameborder = "0";
                 i.border = "0";
-                i.setAttribute("frameborder", "0", 0);
+                i.setAttribute("frameborder", "0");
                 i.width = "100px";
                 i.height = "20px";
-                document.getElementByTagName("body").appendChild(i);
+                document.getElementsByTagName("body")[0].appendChild(i);
             }
 
             if (window.addEventListener) {window.addEventListener("load", async_load, false);}
