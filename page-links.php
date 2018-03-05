@@ -4,6 +4,7 @@
  *
  * @package custom
  */
+include('language.php');
 $this->need('header.php'); ?>
 
     <style>
