@@ -156,7 +156,7 @@
                         rsort($sticky_posts);//对数组逆向排序，即大ID在前
                         foreach ($sticky_posts as $sticky_posts) {
                             $result = Typecho_Widget::widget('Widget_Abstract_Contents')->push($sticky_posts);
-                            $post_views = number_format($result['views']);
+                            $post_views = number_format($result['viewsNum']);
                             $post_title = htmlspecialchars($result['title']);
                             $post_date = date('M d,Y', $result['created']);
                             $permalink = $result['permalink'];

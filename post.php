@@ -59,9 +59,9 @@
                     <div class="section-spacer"></div>
                     <!-- favorite -->
                     <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like" data-cid="<?php $this->cid();?>" data-num="<?php $this->likesNum();?>">
-                                <i class="material-icons mdl-badge mdl-badge--overlap" role="presentation" data-badge="<?php $this->likesNum();?>">favorite</i>
-                                <span class="visuallyhidden">favorite</span>
-                            </button>
+                        <i class="material-icons mdl-badge mdl-badge--overlap" role="presentation" data-badge="<?php $this->likesNum();?>" <?php if(TeStat_Plugin::isliked($this->cid)) echo 'style="color:red;"'; ?>>favorite</i>
+                        <span class="visuallyhidden">favorite</span>
+                    </button>
                     <!-- view tags -->
                     <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                                 <!-- For modern browsers. -->
@@ -81,11 +81,8 @@
                         <?php if (class_exists("TeStat_Plugin")): ?>
                         <a class="md-menu-list-a" href="#">
                             <li class="mdl-menu__item">
-                                <?php ($q=$this->viewsNum); if (($q%2)!=0) {
-                                    echo($q-1)/2;
-                                } else {
-                                    echo $q/2;
-                                } ?> <?php echo $language[$this->options->langis]['view']; ?></li>
+                                <?php $this->viewsNum();?> <?php echo $language[$this->options->langis]['view']; ?>
+                            </li>
                         </a>
                         <?php endif; ?>
                         <?php if ($this->user->hasLogin()):?>
