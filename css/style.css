@@ -190,23 +190,23 @@ blockquote {
     #article-content-div h1 {
         font-size: 2.0em;
     }
-    
+
     #article-content-div h2 {
         font-size: 1.85em;
     }
-    
+
     #article-content-div h3 {
         font-size: 1.70em;
     }
-    
+
     #article-content-div h4 {
         font-size: 1.55em;
     }
-    
+
     #article-content-div h5 {
         font-size: 1.40em;
     }
-    
+
     #article-content-div h6 {
         font-size: 1.25em;
     }
@@ -231,11 +231,11 @@ blockquote {
         width: 100%;
         margin: 0;
     }
-    
+
     .demo-blog .daily-pic{
         height: 100%;
     }
-    
+
     .demo-blog .something-else{
         margin-bottom: 30px;
     }
@@ -247,11 +247,11 @@ blockquote {
         transition: 1s;
         margin-bottom: 20px;
     }
-    
+
     .demo-blog .daily-pic {
         width: calc(66.6666666667% - 16px);
     }
-    
+
     .demo-blog .something-else {
         width: calc(33.3333333333% - 16px);
     }
@@ -384,7 +384,7 @@ blockquote {
     .demo-blog .mdl-card__supporting-text:not(: last-child) {
         min-height: 70px;
     }
-    
+
     .demo-blog .article-module .mdl-card__media~.mdl-card__supporting-text {
         padding: 2pc 1pc;
     }
@@ -579,8 +579,14 @@ blockquote {
     line-height: 28px;
 }
 
+#article-content-div ul p {
+    margin: 1pc 0px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
 .demo-blog--blogpost .comments {
-    display: flex;
+    /*display: flex;*/
     box-sizing: border-box;
     padding: 2pc;
     flex-direction: column;
@@ -966,7 +972,7 @@ blockquote {
     .page-module .mdl-card{
         margin: 0px;
         width: 100%;
-    } 
+    }
 }
 
 
@@ -1734,7 +1740,7 @@ blockquote {
     z-index: 997;
     height: 32px;
     width: 32px;
-    
+
 }
 @media only screen and (max-width: 480px){
     .MD-burger-icon {
