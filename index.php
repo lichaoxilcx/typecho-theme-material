@@ -26,13 +26,11 @@
                 <div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
                     <?php if (!empty($this->options->dailypic)): ?>
                     <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $this->options->dailypic() ?>)">
-                        <?php else: ?>
-                        <?php if (!empty($this->options->CDNURL)): ?>
+                        <?php elseif (!empty($this->options->CDNURL)): ?>
                         <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $this->options->CDNURL() ?>/MaterialCDN/img/hiyou.jpg)">
                             <?php else: ?>
                             <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $this->options->themeUrl('img/hiyou.jpg') ?>)">
-                                <?php endif; ?>
-                                <?php endif; ?>
+                            <?php endif; ?>
                                 <p class="index-top-block-slogan"><a href="<?php $this->options->dailypicLink() ?>"><?php $this->options->slogan() ?></a></p>
                             </div>
 

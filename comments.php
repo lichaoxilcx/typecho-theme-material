@@ -152,4 +152,10 @@
     </div>
 
     <?php endif; ?>
+
+    <h6 style="color: #383838">读者墙：</h6>
+    <div style="border-width: 1px; border-color: #383838;">
+        <?php Avatars_Plugin::output("li","mostactive"); ?>
+    </div>
+
 </div>
