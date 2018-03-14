@@ -5,6 +5,25 @@
 
 <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
 
+    <?php
+        $grayids = explode(',', $this->options->grayscale);
+        if(in_array($this->cid, $grayids)) {
+            $css = <<<EOD
+<style>
+   html {
+       -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+       -ms-filter: grayscale(100%);
+       -o-filter: grayscale(100%);
+       filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+       _filter:none;
+   }
+</style>
+EOD;
+            echo $css;
+        }
+    ?>
+
     <main class="mdl-layout__content">
         <div id="top"></div>
         <!-- Sidebar hamburger button -->

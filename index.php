@@ -26,10 +26,12 @@
                 <div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
                     <?php if (!empty($this->options->dailypic)): ?>
                     <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $this->options->dailypic() ?>)">
-                        <?php elseif (!empty($this->options->CDNURL)): ?>
+                        <?php else: ?>
+                        <?php if (!empty($this->options->CDNURL)): ?>
                         <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $this->options->CDNURL() ?>/MaterialCDN/img/hiyou.jpg)">
                             <?php else: ?>
                             <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $this->options->themeUrl('img/hiyou.jpg') ?>)">
+                            <?php endif; ?>
                             <?php endif; ?>
                                 <p class="index-top-block-slogan"><a href="<?php $this->options->dailypicLink() ?>"><?php $this->options->slogan() ?></a></p>
                             </div>
@@ -170,9 +172,19 @@
                             <?php endif; ?>
 
                             <?php while ($this->next()): ?>
-
+                            <?php
+                                $grayids = explode(',', $this->options->grayscale);
+                                $css = 'style="
+                                    -webkit-filter: grayscale(100%);
+                                    -moz-filter: grayscale(100%);
+                                    -ms-filter: grayscale(100%);
+                                    -o-filter: grayscale(100%);
+                                    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+                                    _filter:none;"';
+                            ?>
                             <!-- Article module -->
-                            <div class="mdl-card mdl-cell mdl-cell--12-col article-module <?php if (!empty($this->options->switch) && in_array('ShowLoadingLine', $this->options->switch)): ?>fade out<?php endif; ?>">
+                            <div class="mdl-card mdl-cell mdl-cell--12-col article-module <?php if (!empty($this->options->switch) && in_array('ShowLoadingLine', $this->options->switch)): ?>fade out<?php endif; ?>" <?php
+                                if(in_array($this->cid, $grayids)) { echo $css; } ?>>
 
                                 <!-- Article link & title -->
                                 <?php if ($this->options->ThumbnailOption == '1'): ?>

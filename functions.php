@@ -111,6 +111,9 @@ function themeConfig($form)
     $sticky_2 = new Typecho_Widget_Helper_Form_Element_Text('sticky_2', null, null, '置顶文章 2 ID', '填写对应主题的 id 即可使文章标题在首页置顶显示');
     $form->addInput($sticky_2->addRule('isInteger', '请填入数字'));
 
+    $grayscale = new Typecho_Widget_Helper_Form_Element_Text('grayscale', null, null, '黑白文章 ID', '填写对应主题的 id 即可使文章页面和白显示，多个使用英文逗号分隔');
+    $form->addInput($grayscale);
+
     $ThemeColor = new Typecho_Widget_Helper_Form_Element_Text('ThemeColor', null, _t('#039BE5'), _t('主题颜色'), null);
     $form->addInput($ThemeColor);
 

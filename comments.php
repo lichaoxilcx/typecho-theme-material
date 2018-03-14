@@ -122,7 +122,7 @@
             <?php endif; ?>
 
             <!-- Input comment content -->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="comment-input-div" style="width: 90%;">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="comment-input-div">
                 <textarea name="text" rows="1" id="comment" class="mdl-textfield__input"></textarea>
                 <label for="comment" class="mdl-textfield__label">
                         <?php echo $language[$this->options->langis]['join_the_discussion']; ?>
@@ -130,7 +130,7 @@
             </div>
 
             <!-- Submit comment content button -->
-            <span style="width: 10%;">
+            <span>
             <?php $comments->reply('
                     <button id="comment-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                         <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">add comment</span>
@@ -152,10 +152,5 @@
     </div>
 
     <?php endif; ?>
-
-    <h6 style="color: #383838">读者墙：</h6>
-    <div style="border-width: 1px; border-color: #383838;">
-        <?php Avatars_Plugin::output("li","mostactive"); ?>
-    </div>
 
 </div>

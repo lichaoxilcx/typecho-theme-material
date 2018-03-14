@@ -173,7 +173,7 @@
 <script src="<?php $this->options->CDNURL() ?>/MaterialCDN/js/jquery.pjax.js"></script>
 <?php else: ?>
 <script src="<?php $this->options->themeUrl('js/jquery.min.js'); ?>"></script>
-<script src="<?php $this->options->themeUrl('js/js.min.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/js.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/jquery.pjax.js'); ?>"></script>
 <?php endif; ?>
 
@@ -285,5 +285,6 @@
 <?php endif; ?>
 
 <?php $this->footer(); ?>
+
 
 </html>
