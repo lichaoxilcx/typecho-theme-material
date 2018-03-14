@@ -45,7 +45,7 @@ EOD;
             <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
                 <!-- Article title -->
-                <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url(<?php showThumbnail($this); ?>);">
+                <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url(<?php randomThumbnail($this); ?>);">
                     <p class="article-headline-p">
                         <?php $this->title() ?>
                     </p>
