@@ -230,7 +230,11 @@ function showThumbnail($widget)
     $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i';
 
     if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
-        echo $thumbUrl[1][0];
+        if($widget->options->ThumbnailOption != 3) {
+            echo $thumbUrl[1][0];
+        } else {
+            echo $random;
+        }
     } elseif (isset($attach->isImage) && $attach->isImage) {
         echo $attach->url;
     } else {
