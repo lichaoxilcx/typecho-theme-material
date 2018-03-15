@@ -172,19 +172,9 @@
                             <?php endif; ?>
 
                             <?php while ($this->next()): ?>
-                            <?php
-                                $grayids = explode(',', $this->options->grayscale);
-                                $css = 'style="
-                                    -webkit-filter: grayscale(100%);
-                                    -moz-filter: grayscale(100%);
-                                    -ms-filter: grayscale(100%);
-                                    -o-filter: grayscale(100%);
-                                    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-                                    _filter:none;"';
-                            ?>
+
                             <!-- Article module -->
-                            <div class="mdl-card mdl-cell mdl-cell--12-col article-module <?php if (!empty($this->options->switch) && in_array('ShowLoadingLine', $this->options->switch)): ?>fade out<?php endif; ?>" <?php
-                                if(in_array($this->cid, $grayids)) { echo $css; } ?>>
+                            <div class="mdl-card mdl-cell mdl-cell--12-col article-module <?php if (!empty($this->options->switch) && in_array('ShowLoadingLine', $this->options->switch)): ?>fade out<?php endif; ?>" style="<?php graycss($this) ?>">
 
                                 <!-- Article link & title -->
                                 <?php if ($this->options->ThumbnailOption == '1'): ?>

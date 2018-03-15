@@ -3,7 +3,7 @@
     $this->need('header.php');
 ?>
 
-<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded <?php if (!empty($this->options->switch) && in_array('ShowLoadingLine', $this->options->switch)): ?>fade out<?php endif; ?>">
+<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded <?php if (!empty($this->options->switch) && in_array('ShowLoadingLine', $this->options->switch)): ?>fade out<?php endif; ?>" style="<?php graycss($this) ?>">
 
     <main class="mdl-layout__content">
         <div id="top"></div>

@@ -122,7 +122,7 @@ $this->need('header.php'); ?>
 <ul class="md-timeline">
    <?php $this->widget('Widget_Contents_Post_Recent','pageSize=10000')->to($archive); ?>
    <?php while($archive->next()):?>
-      <li class="md-timeline-event">
+      <li class="md-timeline-event" style="<?php graycss($this) ?>">
         <label class="md-timeline-event-icon"></label>
         <div class="md-timeline-event-copy">
           <p class="md-timeline-event-thumbnail"><?php $archive->date('M j Y'); ?> - <?php $archive->author() ?></p>

@@ -404,7 +404,7 @@ $this->need('header.php'); ?>
 <section id="md-timeline" class="md-container">
    <?php $this->widget('Widget_Contents_Post_Recent','pageSize=10000')->to($archive); ?>
    <?php while($archive->next()):?>
-       <div class="md-timeline-block">
+       <div class="md-timeline-block" style="<?php graycss($archive) ?>">
            <div class="md-timeline-date blue">
                <div class="md-date">
                    <?php $archive->date('M j'); ?><br />

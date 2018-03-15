@@ -257,3 +257,18 @@ function is_pjax()
 {
     return array_key_exists('HTTP_X_PJAX', $_SERVER) && $_SERVER['HTTP_X_PJAX'];
 }
+
+function graycss($widget)
+{
+    $grayids = explode(',', $widget->widget('Widget_Options')->grayscale);
+    if(in_array($widget->cid, $grayids)) {
+            $css = '
+       -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+       -ms-filter: grayscale(100%);
+       -o-filter: grayscale(100%);
+       filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+       _filter:none;';
+            echo $css;
+    }
+}
